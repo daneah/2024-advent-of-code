@@ -14,8 +14,7 @@ def _int_reader(csv_reader):
 
 def _get_data() -> Generator[list[int], None, None]:
     with open("data.csv") as data_file:
-        for row in _int_reader(reader(data_file)):
-            yield row
+        yield from _int_reader(reader(data_file))
 
 
 if __name__ == "__main__":
