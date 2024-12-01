@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     # Part one
     comparable_data = zip(sorted(list_one), sorted(list_two))
-    print(sum(abs(row[0] - row[1]) for row in comparable_data))
+    print(sum(abs(list_one_item - list_two_item) for list_one_item, list_two_item in comparable_data))
 
     # Part two
     frequencies = Counter(list_two)
