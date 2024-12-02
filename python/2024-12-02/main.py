@@ -24,11 +24,10 @@ def _is_safe_report(all_levels: list[int], dampen: bool) -> bool:
     monotonic = all(n > p for p, n in comparables) or all(n < p for p, n in comparables)
     safe_jumps = all(1 <= abs(n - p) <= 3 for p, n in comparables)
 
-    if monotonic and safe_jumps:
-        return True
-    elif dampen:
+    if dampen:
         return any(_is_safe_report(dampened_levels, False) for dampened_levels in _get_dampened_levels(all_levels))
-    return False
+    else:
+        return monotonic and safe_jumps
 
 
 if __name__ == "__main__":
