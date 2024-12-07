@@ -77,5 +77,5 @@ if __name__ == "__main__":
     # Part one
     print(_find_xmas_count(_get_data()))
 
-    # Part one
+    # Part two
     print(_find_xmas_count(_get_data(), x_mas=True))
